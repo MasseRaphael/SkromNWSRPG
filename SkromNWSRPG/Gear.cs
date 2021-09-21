@@ -8,7 +8,7 @@ namespace SkromNWSRPG
 {
     /*
      * Cette classe représente un équippement dans notre RPG
-     * Il possède un emplacement d'équipement
+     * Il possède un emplacement d'équipement GearSlot de nom Slot
      * C'est une classe Abstraite
      * Elle hérite de la classe Item
      */
