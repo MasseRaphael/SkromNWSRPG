@@ -12,7 +12,8 @@ namespace SkromNWSRPG
      * C'est une classe Abstraite
      * Elle hérite de la classe Item
      */
-    public abstract class Gear
+    public abstract class Gear : Item
     {
+        public GearSlot Slot;
     }
 }
