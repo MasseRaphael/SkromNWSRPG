@@ -28,5 +28,13 @@ namespace SkromNWSRPG
      */
     public class Character
     {
+        public string Name;
+        public int Life;
+        public Character(string name, int life)
+        {
+            Name = name;
+            Life = life;
+        }
+        
     }
 }
