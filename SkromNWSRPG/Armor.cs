@@ -23,7 +23,19 @@ namespace SkromNWSRPG
      *
      * Elle lance une exception si c'est le cas
      */
-    public class Armor
+    public class Armor : Gear
     {
+        public int Defence;
+        public Armor(string name, GearSlot slot, int defence)
+        {
+            Name = name;
+            Slot = slot;
+            if (Slot == GearSlot.Weapon || Slot == GearSlot.TwoHand || Slot == GearSlot.OffHand)
+            {
+                throw new Exception();
+            }
+
+            Defence = defence;
+        }
     }
 }
