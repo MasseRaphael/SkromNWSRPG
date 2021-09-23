@@ -14,5 +14,10 @@ namespace SkromNWSRPG
     public abstract class Item
     {
         public string Name;
+
+        public Item(string name)
+        {
+            Name = name;
+        }
     }
 }

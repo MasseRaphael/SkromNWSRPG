@@ -15,5 +15,10 @@ namespace SkromNWSRPG
     public abstract class Gear : Item
     {
         public GearSlot Slot;
+
+        public Gear(string name, GearSlot slot):base(name)
+        {
+            Slot = slot;
+        }
     }
 }

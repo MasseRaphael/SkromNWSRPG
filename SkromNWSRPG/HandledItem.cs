@@ -29,10 +29,8 @@ namespace SkromNWSRPG
     {
         public int Damage;
         public int Defence;
-        public HandledItem(string name, GearSlot slot, int damage, int defence)
+        public HandledItem(string name, GearSlot slot, int damage, int defence) : base(name, slot)
         {
-            Name = name;
-            Slot = slot;
             if (Slot != GearSlot.Weapon && Slot != GearSlot.TwoHand && Slot != GearSlot.OffHand)
             {
                 throw new Exception();

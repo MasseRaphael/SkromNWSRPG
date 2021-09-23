@@ -26,10 +26,8 @@ namespace SkromNWSRPG
     public class Armor : Gear
     {
         public int Defence;
-        public Armor(string name, GearSlot slot, int defence)
+        public Armor(string name, GearSlot slot, int defence):base(name, slot)
         {
-            Name = name;
-            Slot = slot;
             if (Slot == GearSlot.Weapon || Slot == GearSlot.TwoHand || Slot == GearSlot.OffHand)
             {
                 throw new Exception();
