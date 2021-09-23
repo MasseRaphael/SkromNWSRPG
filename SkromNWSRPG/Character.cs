@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -30,11 +31,71 @@ namespace SkromNWSRPG
     {
         public string Name;
         public int Life;
+        public Dictionary<GearSlot, Gear> Stuff = new Dictionary<GearSlot, Gear>();
         public Character(string name, int life)
         {
             Name = name;
             Life = life;
         }
-        
+
+        public void Equip(Gear gears)
+        {
+            if (gears.Slot == GearSlot.TwoHand)
+            {
+                Stuff[GearSlot.TwoHand] = gears;
+                Stuff[GearSlot.Weapon] = null;
+                Stuff[GearSlot.OffHand] = null;
+            }
+            if(gears.Slot == GearSlot.Weapon)
+            {
+                Stuff[GearSlot.Weapon] = gears;
+                Stuff[GearSlot.TwoHand] = null;
+            }
+            if (gears.Slot == GearSlot.Weapon && Stuff[GearSlot.Weapon] != null)
+            {
+                Stuff[GearSlot.OffHand] = gears;
+            }
+            if (gears.Slot == GearSlot.OffHand)
+            {
+                Stuff[GearSlot.OffHand] = gears;
+                Stuff[GearSlot.TwoHand] = null;
+            }
+            if (gears.Slot == GearSlot.Back)
+            {
+                Stuff[GearSlot.Back] = gears;
+            }
+
+            if (gears.Slot == GearSlot.Chest)
+            {
+                Stuff[GearSlot.Chest] = gears;
+            }
+
+            if (gears.Slot == GearSlot.Feet)
+            {
+                Stuff[GearSlot.Feet] = gears;
+            }
+
+            if (gears.Slot == GearSlot.Head)
+            {
+                Stuff[GearSlot.Head] = gears;
+            }
+
+            if (gears.Slot == GearSlot.Legs)
+            {
+                Stuff[GearSlot.Legs] = gears;
+            }
+        }
+
+        public Gear GetItemInSlot(GearSlot slot)
+        {
+            if (Stuff[slot] != null)
+            {
+                return Stuff[slot];
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }
